@@ -14,7 +14,7 @@ export default function WelcomeScreen({ navigation, route }) {
             <Text style={{ fontSize: 18, marginBottom: 10 }}>
                 Bem-vindo, {userEmail}!
             </Text>
-            <Button title="Sair" onPress={sair} />
+            <Button title="Sairrrrrr" onPress={sair} />
         </View>
     );
 }
