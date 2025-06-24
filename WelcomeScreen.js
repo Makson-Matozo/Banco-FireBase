@@ -1,20 +1,28 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { auth, signOut, getAuth } from 'firebase/auth';
+import styles from './estilo/estiloLogin';
 
 export default function WelcomeScreen({ navigation, route }) {
     const userEmail = route.params?.email || auth.currentUser?.email || 'Usuário';
 
     const sair = () => {
-        signOut(getAuth()).then(() => navigation.navigate('Login'));
+        signOut(getAuth())
+            .then(() => navigation.popToTop())
+            .catch(error => console.error("Erro ao sair:", error));
     };
 
     return (
-        <View style={{ padding: 20 }}>
-            <Text style={{ fontSize: 18, marginBottom: 10 }}>
-                Bem-vindo, {userEmail}!
-            </Text>
-            <Button title="Sairrrrrr" onPress={sair} />
+        <View style={styles.container}>
+            <Text style={styles.Welcome}>Bem-vindo! {userEmail}</Text>
+
+
+                
+            
+
+            <TouchableOpacity style={styles.botao} onPress={sair}>
+                <Text style={styles.botaoTexto}>Sair</Text>
+            </TouchableOpacity>
         </View>
     );
 }
