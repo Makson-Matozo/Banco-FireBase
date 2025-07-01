@@ -4,7 +4,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         padding: 20,
     },
@@ -44,6 +44,15 @@ export default StyleSheet.create({
         alignItems: 'center',
         marginBottom: 20,
     },
+    botaoSair: {
+        width: '100%',
+        height: 45,
+        backgroundColor: '#FF0000',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
     botaoTexto: {
         color: '#fff',
         fontWeight: 'bold',
@@ -54,4 +63,16 @@ export default StyleSheet.create({
     linkRegistro: {
         color: '#4169e1',
     },
+    card: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        padding: 10,
+        marginBottom: 10
+    },
+    usuario: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 5
+    }
 });
